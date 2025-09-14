@@ -1,0 +1,601 @@
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif+JP:600);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+TC);
+@import "bootstrap.min.css";
+@import "swiper-bundle.min.css";
+
+@mixin lg {
+    @media(max-width:1200px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media(max-width:992px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media(max-width:768px) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media(max-width:575px) {
+        @content;
+    }
+}
+
+html {
+    @include xs {
+        font-size: 14px;
+    }
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #3E3A39;
+}
+
+img {
+    max-width: 100%;
+}
+
+section {
+    padding: 70px 0;
+
+    .row {
+        position: relative;
+    }
+
+    @include sm {
+        padding-bottom: 30px;
+    }
+}
+
+.swiper-pagination-bullet {
+    background: #fff;
+}
+
+// hero
+
+.hero {
+    position: relative;
+    background-image: url('../images/bg_home.jpg');
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+
+    .container {
+        margin: auto;
+    }
+
+}
+
+.nav_link {
+    position: absolute;
+    display: flex;
+    height: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+
+    a {
+        text-decoration: none;
+        color: #000;
+        margin: 0 6px;
+        padding: 8px 52px;
+        border-bottom: 1px solid transparent;
+        transition: .3s ease;
+        font-size: 1.2rem;
+
+        &:hover {
+            border-bottom: 1px solid #000;
+        }
+
+        @include lg {
+            padding: 8px 32px;
+        }
+
+        @include sm {
+            padding: 8px 16px;
+            font-size: 1rem;
+        }
+
+        @include sm {
+            margin: 0;
+        }
+    }
+}
+
+.home_logo {
+    width: 480px;
+    max-width: 90%;
+
+    @include sm {
+        width: 400px;
+        max-width: 70%;
+    }
+}
+
+.bg_line {
+    background-image: url('../images/bg_line.jpg');
+    background-position: top;
+    background-size: cover;
+}
+
+.video {
+    position: relative;
+
+    .volume {
+        position: absolute;
+        right: 50px;
+        bottom: 50px;
+
+        a {
+
+            &.hide {
+                display: none;
+            }
+        }
+
+        img {
+            width: 40px;
+            display: block;
+        }
+
+        @include md {
+            right: 20px;
+            bottom: 20px;
+
+            img {
+                width: 30px;
+            }
+        }
+
+        @include sm {
+            right: 20px;
+            bottom: 20px;
+
+            img {
+                width: 24px;
+            }
+        }
+    }
+}
+
+.info_flex {
+    display: flex;
+    flex-direction: column;
+
+    @include md {
+        margin: auto;
+    }
+}
+
+.info {
+    h2 {
+        font-family: 'Noto Serif JP', serif;
+        letter-spacing: 2px;
+        margin-bottom: 40px;
+    }
+
+    p {
+        letter-spacing: .06em;
+        line-height: 1.8;
+        margin: 0;
+    }
+
+    @include md {
+        margin: 0 0 40px 0 !important;
+
+        h2 {
+            margin-bottom: 30px;
+        }
+    }
+
+    @include sm {
+        margin-bottom: 40px;
+    }
+}
+
+.txt {
+    @include md {
+        margin-top: 0 !important;
+        margin-bottom: 30px !important;
+    }
+
+    @include sm {
+        margin-bottom: 20px !important;
+    }
+}
+
+
+// section01
+
+.section01 {
+    .info {
+        margin-top: auto;
+        margin-bottom: 60px;
+    }
+}
+
+.txt01 {
+    width: 80%;
+    margin-top: 40px;
+}
+
+// section02
+
+.section02 {
+    .info {
+        margin-top: auto;
+        margin-bottom: 60px;
+    }
+}
+
+.txt02 {
+    width: 90%;
+    margin-top: auto;
+}
+
+// section03
+
+.section03 {
+    .info {
+        margin-top: auto;
+        margin-bottom: 100px;
+    }
+}
+
+.txt03 {
+    width: 80%;
+    margin-top: 40px;
+}
+
+// section04
+
+.section04 {
+    .info {
+        margin-top: auto;
+        margin-bottom: 60px;
+    }
+}
+
+.txt04 {
+    width: 80%;
+    margin-top: auto;
+    margin-bottom: 60px;
+}
+
+// swiper_full
+.swiper_full {
+    position: relative;
+    color: #fff;
+
+
+    .info {
+        position: absolute;
+        right: 60px;
+        bottom: 50px;
+        z-index: 9;
+    }
+
+    .txt {
+        position: absolute;
+        z-index: 9;
+    }
+
+    .txt05 {
+        height: 24px;
+        left: 60px;
+        top: 50px;
+    }
+
+    .txt06 {
+        height: 24px;
+        left: 60px;
+        bottom: 50px;
+    }
+
+    @include md {
+        color: #3E3A39;
+
+        .info {
+            padding-top: 20px;
+            position: static;
+            margin-bottom: 0 !important;
+        }
+
+        .txt05 {
+            height: 18px;
+            left: 20px;
+            top: 20px;
+
+            @include xs {
+                height: 14px;
+            }
+        }
+
+        .txt06 {
+            height: 18px;
+            bottom: auto;
+            left: 20px;
+            top: 20px;
+
+            @include xs {
+                height: 14px;
+            }
+        }
+    }
+}
+
+.section05 {
+    @include sm {
+        padding-bottom: 0;
+    }
+}
+
+.footer {
+    position: relative;
+    background-image: url('../images/bg_home.jpg');
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    font-family: "Noto Serif JP", serif;
+
+    .footer_txt {
+        margin: auto;
+        max-width: 90%;
+
+        h2 {
+            letter-spacing: .4em;
+            margin-bottom: 2rem;
+        }
+
+        p {
+            letter-spacing: .4em;
+            font-size: 1.4rem;
+            margin: 0;
+        }
+
+        @include sm {
+            h2 {
+                letter-spacing: .3em;
+            }
+
+            p {
+                letter-spacing: .3em;
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    @include xs {
+        min-height: auto;
+        padding: 70px 0;
+    }
+}
+
+.totop {
+    position: fixed;
+    display: block;
+    width: 70px;
+    right: 20px;
+    bottom: 50px;
+    z-index: 9;
+    opacity: 0;
+    transition: .4s ease;
+
+    &.show {
+        opacity: 1;
+    }
+
+    @include xs {
+        width: 50px;
+        bottom: 20px;
+    }
+}
+
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateY(-100%);
+    transition: .4s ease;
+
+    .navbar-nav {
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    &.show {
+        transform: translateY(0%);
+    }
+}
+
+// form
+.form {
+    padding: 20px 0 100px 0;
+}
+
+.form_item {
+    margin-bottom: 20px;
+}
+
+.form-check {
+    display: flex;
+    justify-content: center;
+
+    a {
+        text-decoration: none;
+        color: #c43c27;
+    }
+}
+
+.form-control,
+.form-select {
+    border: 0;
+    border-radius: 50px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.07);
+    padding: 0.7rem 1.3rem;
+}
+
+textarea.form-control {
+    border-radius: 20px;
+}
+
+// checkmark
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+}
+
+.checkbox_item {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    padding-left: 2rem;
+
+    a {
+        text-decoration: none;
+        color: #b0964e;
+    }
+}
+
+.checkbox_item input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+
+.checkbox_item:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+.checkbox_item input:checked~.checkmark {
+    background-color: #3a3a3a;
+    border-radius: 3px;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox_item input:checked~.checkmark:after {
+    display: block;
+}
+
+.checkbox_item .checkmark:after {
+    left: 8px;
+    top: 3px;
+    width: 7px;
+    height: 13px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.btn-primary {
+    background: #d5bc77;
+    border-color: #d5bc77;
+
+    &:hover,
+    &:focus {
+        background: #b0964e;
+        border-color: #b0964e;
+    }
+}
+
+.contact_btn {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    justify-content: center;
+    padding: 18px 12px;
+    color: #000;
+    text-decoration: none;
+    height: 100%;
+    transition: .4s ease;
+
+    img {
+        height: 32px;
+        margin-right: 12px;
+        filter: brightness(1);
+        transition: .4s ease;
+
+        @include xs {
+            height: 24px;
+            margin-right: 8px;
+        }
+    }
+}
+
+a.contact_btn:hover {
+    background: #b0964e;
+    color: #fff;
+
+    img {
+        filter: brightness(10);
+    }
+}
+
+.section_info {
+    background-image: url('../images/bg_cement.jpg');
+    background-size: cover;
+}
+
+.info_detail {
+    font-size: 1.2rem;
+
+    li {
+        margin-bottom: 1rem;
+    }
+
+    b {
+        font-weight: 600;
+    }
+}
+
+.modal .modal-body {
+    padding: 32px;
+
+    h3 {
+        font-size: 1.1rem;
+        color: #b0964e;
+        font-weight: bold;
+        margin-top: 2rem;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+    @include md {
+        padding: 24px;
+    }
+    @include sm {
+        padding: 16px;
+    }
+}
