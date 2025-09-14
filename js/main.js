@@ -26,12 +26,15 @@ $(document).ready(function () {
 });
 
 $(window).scroll(function () {
-    if ($(window).scrollTop() - $('.hero .nav_link').offset().top >= 0) {
+    // 檢查元素是否存在再執行
+    if ($('.hero .nav_link').length && $(window).scrollTop() - $('.hero .nav_link').offset().top >= 0) {
         $('.navbar').addClass('show')
-    } else {
+    } else if ($('.navbar').length) {
         $('.navbar').removeClass('show')
     }
-    if ($(window).scrollTop() - $('.section01').offset().top >= 0) {
+    
+    // 直接根據滾動距離顯示返回頂部按鈕
+    if ($(window).scrollTop() > 200) {
         $('.totop').addClass('show')
     } else {
         $('.totop').removeClass('show')
